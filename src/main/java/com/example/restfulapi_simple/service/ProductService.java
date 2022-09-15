@@ -1,9 +1,9 @@
 package com.example.restfulapi_simple.service;
 
 import com.example.restfulapi_simple.model.Product;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductService {
     //Save operation
@@ -13,7 +13,7 @@ public interface ProductService {
     List<Product> getProductList();
 
     // Find operation
-    Product findById(int id);
+    Optional<Product> findById(int id);
 
     // Update operation
     Product updateProduct(Product product);

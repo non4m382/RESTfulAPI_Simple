@@ -2,7 +2,6 @@ package com.example.restfulapi_simple.controller;
 
 import com.example.restfulapi_simple.model.Product;
 import com.example.restfulapi_simple.service.ProductService;
-import com.example.restfulapi_simple.service.ProductServiceImpl;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,7 +28,7 @@ public class ProductController {
 
     @GetMapping("{id}")
     public Product findProductById(@PathVariable int id) {
-        return service.findById(id);
+        return service.findById(id).orElse(null);
     }
 
     @PutMapping
@@ -41,6 +40,4 @@ public class ProductController {
     public String deleteProduct(@PathVariable int id) {
         return service.deleteProduct(id);
     }
-
-
 }
